@@ -2,7 +2,7 @@
 
 Common React coding challenges
 
-App URL [here](https://project-dashboard-client-3i2mtbjusq-ew.a.run.app/)
+Vist app here: [`https://cosmic-pegasus-cb48bb.netlify.app/`](https://cosmic-pegasus-cb48bb.netlify.app/)
 
 ## Build/run app locally
 
