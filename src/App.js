@@ -1,7 +1,8 @@
 import React from "react";
 import "./App.css";
 import TodoList from "./components/TodoList";
-import GithubStar from "./components/GithubStar";
+import GithubStars from "./components/GithubStars";
+import TodoListStrike from "./components/TodoListStrike";
 
 const App = () => {
   return (
@@ -9,7 +10,8 @@ const App = () => {
       <h1>React Challenges</h1>
       <section className="challenges">
         <TodoList />
-        <GithubStar />
+        <GithubStars />
+        <TodoListStrike />
       </section>
     </div>
   );

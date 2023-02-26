@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const DeleteFromList = () => {
-  const [list, setList] = useState([]);
+  const [todos, setTodos] = useState([]);
   const [value, setValue] = useState("");
 
   const changeHandler = (e) => {
@@ -9,12 +9,19 @@ const DeleteFromList = () => {
   };
 
   const submitHandler = () => {
-    setList([...list, value]);
+    setTodos([...todos, { name: value, done: false }]);
     setValue("");
   };
 
-  const deleteHandler = (item) => {
-    setList(list.filter((ele) => ele !== item));
+  const handleOnItemClick = (todo) => {
+    let updatedTodos = todos.map((n) => {
+      if (n.name === todo) {
+        return { ...n, done: !n.done };
+      }
+      return n;
+    });
+
+    setTodos(updatedTodos);
   };
 
   return (
@@ -30,11 +37,15 @@ const DeleteFromList = () => {
       </button>
       <hr />
       <ul>
-        {list.length > 0 &&
-          list.map((item, index) => {
+        {todos.length > 0 &&
+          todos.map((todo, index) => {
             return (
-              <li key={index} onClick={() => deleteHandler(item)}>
-                {item}
+              <li
+                className={todo.done ? "strike-through" : undefined}
+                key={index}
+                onClick={() => handleOnItemClick(todo.name)}
+              >
+                {todo.name}
               </li>
             );
           })}

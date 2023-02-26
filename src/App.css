@@ -24,3 +24,27 @@ body {
   box-shadow: 10px 5px 5px #95bdff;
   background-color: #b4e4ff;
 }
+
+.challenge input {
+  padding: 10px;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  font-size: medium;
+  border: none;
+}
+
+.round-input {
+  border-radius: 10px;
+}
+
+li.strike-through {
+  text-decoration: line-through;
+}
+
+button {
+  background-color: #f7c8e0;
+  color: #2b3467;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100px;
+  border: none;
+}
