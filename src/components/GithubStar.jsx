@@ -1,0 +1,77 @@
+import axios from "axios";
+import React, { useState, useEffect, useCallback } from "react";
+
+const SEARCH_ENDPOINT = "https://api.github.com/search/repositories?q=react";
+
+const getReactRepositories = () =>
+  axios
+    .get(SEARCH_ENDPOINT)
+    .then((result) => result.data.items)
+    .then((repos) =>
+      repos.map(({ forks, name, stargazers_count, html_url }) => ({
+        forks,
+        name,
+        stars: stargazers_count,
+        url: html_url,
+      }))
+    );
+
+const GithubStar = () => {
+  const [shouldShowAll, setShouldShowAll] = useState(false);
+  const [list, setList] = useState([]);
+  const [listToRender, setListToRender] = useState([]);
+
+  const fetchData = async () => {
+    const res = await getReactRepositories();
+    setList(res);
+  };
+
+  const sliceListByCount = useCallback(
+    (count) => {
+      const slicedList = list.slice(0, count);
+      setListToRender(slicedList);
+    },
+    [list]
+  );
+
+  const handleOnShowAllClick = () => {
+    setShouldShowAll(!shouldShowAll);
+    if (shouldShowAll) {
+      sliceListByCount(10);
+    } else {
+      setListToRender(list);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    sliceListByCount(10);
+  }, [list, sliceListByCount]);
+
+  return (
+    <div className="challenge">
+      {!!listToRender.length && (
+        <ul>
+          <li>
+            <span>packake - stars - forks </span>
+          </li>
+          {listToRender.map((i) => (
+            <li key={`${i.name} + ${i.stars}`}>
+              <span>
+                {i.name} - {i.stars} - {i.forks}
+              </span>
+            </li>
+          ))}
+        </ul>
+      )}
+      <button onClick={handleOnShowAllClick}>
+        {shouldShowAll ? "Show less" : "Show all"}
+      </button>
+    </div>
+  );
+};
+
+export default GithubStar;
