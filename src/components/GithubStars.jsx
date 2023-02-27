@@ -54,18 +54,24 @@ const GithubStar = () => {
   return (
     <div className="challenge">
       {!!listToRender.length && (
-        <ul>
-          <li>
-            <span>packake - stars - forks </span>
-          </li>
-          {listToRender.map((i) => (
-            <li key={`${i.name} + ${i.stars}`}>
-              <span>
-                {i.name} - {i.stars} - {i.forks}
-              </span>
-            </li>
-          ))}
-        </ul>
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>Package</th>
+              <th>Stars</th>
+              <th>Forks</th>
+            </tr>
+          </thead>
+          <tbody>
+            {listToRender.map((i) => (
+              <tr key={`${i.name} + ${i.stars}`}>
+                <td>{i.name}</td>
+                <td>{i.stars}</td>
+                <td>{i.forks}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       )}
       <button onClick={handleOnShowAllClick}>
         {shouldShowAll ? "Show less" : "Show all"}
