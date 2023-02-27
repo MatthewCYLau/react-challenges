@@ -9,6 +9,17 @@ body {
   background-color: #dfffd8;
 }
 
+hr {
+  margin: 1rem 0;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0)
+  );
+}
+
 .main-content {
   padding: 8rem;
   display: flex;
@@ -41,10 +52,19 @@ li.strike-through {
 }
 
 button {
-  background-color: #f7c8e0;
-  color: #2b3467;
+  background-color: #3e54ac;
+  color: #eeeeee;
   border-radius: 10px;
   padding: 10px;
   width: 100px;
   border: none;
+  margin: 0;
+  font-weight: bold;
+  transition: 0.25s;
+}
+
+button:hover {
+  background-color: #2f58cd;
+  color: #fff;
+  cursor: pointer;
 }
