@@ -3,10 +3,16 @@
   padding: 0;
 }
 
+:root {
+  --main-bg-color: #dfffd8;
+  --btn-bg-color: #3e54ac;
+  --white-color: #ffffff;
+}
+
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background-color: #dfffd8;
+  background-color: var(--main-bg-color);
 }
 
 hr {
@@ -52,8 +58,8 @@ li.strike-through {
 }
 
 button {
-  background-color: #3e54ac;
-  color: #eeeeee;
+  background-color: var(--btn-bg-color);
+  color: var(--white-color);
   border-radius: 10px;
   padding: 10px;
   width: 100px;
@@ -65,7 +71,6 @@ button {
 
 button:hover {
   background-color: #2f58cd;
-  color: #fff;
   cursor: pointer;
 }
 
@@ -80,8 +85,8 @@ button:hover {
 }
 
 .styled-table thead tr {
-  background-color: #3e54ac;
-  color: #ffffff;
+  background-color: var(--btn-bg-color);
+  color: var(--white-color);
   text-align: left;
 }
 
@@ -99,10 +104,22 @@ button:hover {
 }
 
 .styled-table tbody tr:last-of-type {
-  border-bottom: 2px solid #3e54ac;
+  border-bottom: 2px solid var(--btn-bg-color);
 }
 
-.styled-table tbody tr.active-row {
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  padding-left: 1em;
+  text-indent: -0.7em;
+}
+
+ul li::before {
+  content: "• ";
+  color: var(--btn-bg-color);
   font-weight: bold;
-  color: #009879;
 }
