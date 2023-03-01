@@ -52,9 +52,9 @@ const GithubStar = () => {
   }, [list, sliceListByCount]);
 
   return (
-    <div className="challenge">
+    <div className="paper">
       {!!listToRender.length && (
-        <table class="styled-table">
+        <table className="styled-table">
           <thead>
             <tr>
               <th>Package</th>

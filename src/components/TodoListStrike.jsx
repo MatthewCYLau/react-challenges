@@ -25,7 +25,7 @@ const DeleteFromList = () => {
   };
 
   return (
-    <div className="challenge">
+    <div className="paper">
       <input
         className="round-input"
         type="text"
