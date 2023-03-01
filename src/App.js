@@ -3,6 +3,7 @@ import "./App.css";
 import TodoList from "./components/TodoList";
 import GithubStars from "./components/GithubStars";
 import TodoListStrike from "./components/TodoListStrike";
+import Pagination from "./components/Pagination";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <TodoList />
         <GithubStars />
         <TodoListStrike />
+        <Pagination />
       </section>
     </div>
   );
