@@ -8,6 +8,7 @@
   --btn-bg-color: #3e54ac;
   --white-color: #ffffff;
   --royal-blue: #2f58cd;
+  --btn-bg-pink: #f7c8e0;
 }
 
 body {
@@ -123,4 +124,15 @@ ul li::before {
   content: "• ";
   color: var(--btn-bg-color);
   font-weight: bold;
+}
+
+.collapsible button {
+  margin: 0.5rem 0;
+  background-color: var(--btn-bg-pink);
+  color: #404258;
+  width: 120px;
+}
+
+.collapsible .content {
+  padding: 1rem 0;
 }

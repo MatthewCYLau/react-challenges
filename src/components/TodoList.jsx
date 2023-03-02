@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Collapsible from "./Collapsible";
 
 const DeleteFromList = () => {
   const [list, setList] = useState([]);
@@ -19,6 +20,9 @@ const DeleteFromList = () => {
 
   return (
     <div className="paper">
+      <Collapsible>
+        <p>Create a To-Do list</p>
+      </Collapsible>
       <input
         className="round-input"
         type="text"
