@@ -14,6 +14,7 @@ const Pagination = () => {
   useEffect(() => {
     fetchData();
   }, []);
+  console.log(posts);
   return (
     <div className="paper">
       <h2>Pagination</h2>

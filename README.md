@@ -2,6 +2,8 @@
 
 Common React coding challenges
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/57f566db-813e-403f-b4b7-820439b439ca/deploy-status)](https://app.netlify.com/sites/cosmic-pegasus-cb48bb/deploys)
+
 Vist app here: [`https://cosmic-pegasus-cb48bb.netlify.app/`](https://cosmic-pegasus-cb48bb.netlify.app/)
 
 ## Build/run app locally
