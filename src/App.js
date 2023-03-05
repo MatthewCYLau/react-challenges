@@ -7,14 +7,29 @@ import Pagination from "./components/Pagination";
 
 const App = () => {
   return (
-    <div className="main-content">
-      <h1>React Challenges</h1>
-      <section className="challenges">
-        <TodoList />
-        <GithubStars />
-        <TodoListStrike />
-        <Pagination />
-      </section>
+    <div className="wrapper">
+      <nav className="sidenav">
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="#todo-list">To-Do list</a>
+          </li>
+          <li>
+            <a href="#github-stars">Github stars</a>
+          </li>
+        </ul>
+      </nav>
+      <div className="main-content">
+        <h1>React Challenges</h1>
+        <section className="challenges">
+          <TodoList />
+          <GithubStars />
+          <TodoListStrike />
+          <Pagination />
+        </section>
+      </div>
     </div>
   );
 };

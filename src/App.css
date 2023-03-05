@@ -9,6 +9,7 @@
   --white-color: #ffffff;
   --royal-blue: #2f58cd;
   --btn-bg-pink: #f7c8e0;
+  --dark-grey: #2c3333;
 }
 
 body {
@@ -28,11 +29,43 @@ hr {
   );
 }
 
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.wrapper .sidenav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  background: #f7c8e0;
+  flex: 1;
+}
+
+.sidenav ul li {
+  list-style: none;
+  padding: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidenav ul li a {
+  color: var(--dark-grey);
+  font-weight: bold;
+}
+
 .main-content {
+  flex: 3;
   padding: 8rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-y: scroll;
 }
 
 .paper {
