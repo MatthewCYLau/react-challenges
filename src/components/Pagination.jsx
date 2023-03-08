@@ -46,6 +46,20 @@ const Pagination = () => {
           </tbody>
         </table>
       )}
+      <div className="arrows">
+        <span className="bold icon">
+          <i className="fa-solid fa-arrow-left bold"></i>
+        </span>
+        <span className="icon">
+          <i className="fa-solid fa-arrow-left"></i>
+        </span>
+        <span className="icon">
+          <i className="fa-solid fa-arrow-right"></i>
+        </span>
+        <span className="bold icon">
+          <i className="fa-solid fa-arrow-right bold"></i>
+        </span>
+      </div>
     </div>
   );
 };

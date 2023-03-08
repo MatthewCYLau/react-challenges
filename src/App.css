@@ -169,3 +169,18 @@ ul li::before {
 .collapsible .content {
   padding: 1rem 0;
 }
+
+.arrows {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.icon {
+  font-size: 2rem;
+  padding: 0 1rem;
+}
+
+.bold.icon {
+  color: var(--royal-blue);
+}
