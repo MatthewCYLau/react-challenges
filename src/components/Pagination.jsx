@@ -18,7 +18,13 @@ const Pagination = () => {
     );
     setPosts(data);
     setPostsCount(POST_COUNT);
-  }, [startIndex, endIndex]);
+  }, []);
+
+  const handleOnNextPageClick = () =>
+    setStartIndex((prevCount) => prevCount + 1);
+
+  const handleOnPreviousPageClick = () =>
+    setStartIndex((prevCount) => prevCount - 1);
 
   useEffect(() => {
     fetchData();
@@ -50,10 +56,10 @@ const Pagination = () => {
         <span className="bold icon">
           <i className="fa-solid fa-arrow-left bold"></i>
         </span>
-        <span className="icon">
+        <span className="icon" onClick={handleOnPreviousPageClick}>
           <i className="fa-solid fa-arrow-left"></i>
         </span>
-        <span className="icon">
+        <span className="icon" onClick={handleOnNextPageClick}>
           <i className="fa-solid fa-arrow-right"></i>
         </span>
         <span className="bold icon">
