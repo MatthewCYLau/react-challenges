@@ -2,17 +2,17 @@ import React, { useEffect, useCallback } from "react";
 import axios from "axios";
 
 const Pagination = () => {
-  const POST_COUNT = 0;
+  const POST_COUNT = 100;
   const PAGE_SIZE = 10;
   const [posts, setPosts] = React.useState([]);
   // eslint-disable-next-line
   const [postsCount, setPostsCount] = React.useState(0);
-  // eslint-disable-next-line
-  const [startIndex, setStartIndex] = React.useState(0);
-  // eslint-disable-next-line
-  const [endIndex, setEndIndex] = React.useState(startIndex + PAGE_SIZE);
+  const [searchIndexes, setSearchIndexes] = React.useState({
+    startIndex: 0,
+    endIndex: PAGE_SIZE,
+  });
 
-  const fetchData = useCallback(async () => {
+  const fetchData = useCallback(async (startIndex, endIndex) => {
     const { data } = await axios.get(
       `https://jsonplaceholder.typicode.com/posts?_start=${startIndex}&_end=${endIndex}`
     );
@@ -21,14 +21,22 @@ const Pagination = () => {
   }, []);
 
   const handleOnNextPageClick = () =>
-    setStartIndex((prevCount) => prevCount + 1);
+    setSearchIndexes((prevSearchIndexes) => ({
+      ...prevSearchIndexes,
+      startIndex: prevSearchIndexes.startIndex + PAGE_SIZE,
+      endIndex: prevSearchIndexes.endIndex + PAGE_SIZE,
+    }));
 
   const handleOnPreviousPageClick = () =>
-    setStartIndex((prevCount) => prevCount - 1);
+    setSearchIndexes((prevSearchIndexes) => ({
+      ...prevSearchIndexes,
+      startIndex: prevSearchIndexes.startIndex - PAGE_SIZE,
+      endIndex: prevSearchIndexes.endIndex - PAGE_SIZE,
+    }));
 
   useEffect(() => {
-    fetchData();
-  }, [fetchData]);
+    fetchData(searchIndexes.startIndex, searchIndexes.endIndex);
+  }, [fetchData, searchIndexes.startIndex, searchIndexes.endIndex]);
   return (
     <div className="paper">
       <h2>Pagination</h2>
