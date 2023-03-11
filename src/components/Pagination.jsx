@@ -20,6 +20,12 @@ const Pagination = () => {
     setPostsCount(POST_COUNT);
   }, []);
 
+  const handleOnFirstPageClick = () =>
+    setSearchIndexes({
+      startIndex: 0,
+      endIndex: PAGE_SIZE,
+    });
+
   const handleOnNextPageClick = () =>
     setSearchIndexes((prevSearchIndexes) => ({
       ...prevSearchIndexes,
@@ -61,7 +67,7 @@ const Pagination = () => {
         </table>
       )}
       <div className="arrows">
-        <span className="bold icon">
+        <span className="bold icon" onClick={handleOnFirstPageClick}>
           <i className="fa-solid fa-arrow-left bold"></i>
         </span>
         <span className="icon" onClick={handleOnPreviousPageClick}>
