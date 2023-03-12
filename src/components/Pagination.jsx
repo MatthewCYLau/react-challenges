@@ -2,7 +2,7 @@ import React, { useEffect, useCallback } from "react";
 import axios from "axios";
 
 const Pagination = () => {
-  const POST_COUNT = 100;
+  const POST_COUNT = 91;
   const PAGE_SIZE = 10;
   const [posts, setPosts] = React.useState([]);
   // eslint-disable-next-line
@@ -25,6 +25,14 @@ const Pagination = () => {
       startIndex: 0,
       endIndex: PAGE_SIZE,
     });
+
+  const handleOnLastPageClick = () => {
+    const startIndex = (Math.ceil(POST_COUNT / PAGE_SIZE) - 1) * PAGE_SIZE;
+    setSearchIndexes({
+      startIndex: startIndex,
+      endIndex: startIndex + PAGE_SIZE,
+    });
+  };
 
   const handleOnNextPageClick = () =>
     setSearchIndexes((prevSearchIndexes) => ({
@@ -76,7 +84,7 @@ const Pagination = () => {
         <span className="icon" onClick={handleOnNextPageClick}>
           <i className="fa-solid fa-arrow-right"></i>
         </span>
-        <span className="bold icon">
+        <span className="bold icon" onClick={handleOnLastPageClick}>
           <i className="fa-solid fa-arrow-right bold"></i>
         </span>
       </div>
