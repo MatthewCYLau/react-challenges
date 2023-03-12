@@ -1,8 +1,9 @@
 import React, { useEffect, useCallback } from "react";
+import { returnPaginationLastPageStartIndex } from "../utils/utils";
 import axios from "axios";
 
 const Pagination = () => {
-  const POST_COUNT = 91;
+  const POST_COUNT = 100;
   const PAGE_SIZE = 10;
   const [posts, setPosts] = React.useState([]);
   // eslint-disable-next-line
@@ -27,7 +28,10 @@ const Pagination = () => {
     });
 
   const handleOnLastPageClick = () => {
-    const startIndex = (Math.ceil(POST_COUNT / PAGE_SIZE) - 1) * PAGE_SIZE;
+    const startIndex = returnPaginationLastPageStartIndex(
+      POST_COUNT,
+      PAGE_SIZE
+    );
     setSearchIndexes({
       startIndex: startIndex,
       endIndex: startIndex + PAGE_SIZE,
