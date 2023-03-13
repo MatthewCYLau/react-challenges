@@ -1,5 +1,6 @@
 import React, { useEffect, useCallback } from "react";
 import { returnPaginationLastPageStartIndex } from "../utils/utils";
+import cn from "classnames";
 import axios from "axios";
 
 const Pagination = () => {
@@ -79,7 +80,12 @@ const Pagination = () => {
         </table>
       )}
       <div className="arrows">
-        <span className="bold icon" onClick={handleOnFirstPageClick}>
+        <span
+          className={cn("bold icon", {
+            disabled: searchIndexes.startIndex <= 0,
+          })}
+          onClick={handleOnFirstPageClick}
+        >
           <i className="fa-solid fa-arrow-left bold"></i>
         </span>
         <span className="icon" onClick={handleOnPreviousPageClick}>

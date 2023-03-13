@@ -10,6 +10,7 @@
   --royal-blue: #2f58cd;
   --btn-bg-pink: #f7c8e0;
   --dark-grey: #2c3333;
+  --powder-blue: #b2c8df;
 }
 
 body {
@@ -183,4 +184,8 @@ ul li::before {
 
 .bold.icon {
   color: var(--royal-blue);
+}
+
+.bold.icon.disabled {
+  color: var(--powder-blue);
 }
