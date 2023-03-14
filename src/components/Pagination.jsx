@@ -57,7 +57,7 @@ const Pagination = () => {
     fetchData(searchIndexes.startIndex, searchIndexes.endIndex);
   }, [fetchData, searchIndexes.startIndex, searchIndexes.endIndex]);
   return (
-    <div className="paper">
+    <div id="pagination" className="paper">
       <h2>Pagination</h2>
       {!!posts.length && (
         <table className="styled-table">

@@ -19,6 +19,9 @@ const App = () => {
           <li>
             <a href="#github-stars">Github stars</a>
           </li>
+          <li>
+            <a href="#pagination">Pagination</a>
+          </li>
         </ul>
       </nav>
       <div className="main-content">
