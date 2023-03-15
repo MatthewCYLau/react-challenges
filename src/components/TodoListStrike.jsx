@@ -32,7 +32,7 @@ const DeleteFromList = () => {
         value={value}
         onChange={changeHandler}
       />{" "}
-      <button className="submit" onClick={submitHandler}>
+      <button className="action" onClick={submitHandler}>
         Add
       </button>
       <hr />

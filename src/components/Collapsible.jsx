@@ -8,7 +8,9 @@ const Collapsible = ({ children }) => {
 
   return (
     <div className="collapsible">
-      <button onClick={toggle}>Show prompt</button>
+      <button className="action" onClick={toggle}>
+        Show prompt
+      </button>
       {showContent && <div className="content">{children}</div>}
     </div>
   );

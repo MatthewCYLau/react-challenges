@@ -9,6 +9,7 @@
   --white-color: #ffffff;
   --royal-blue: #2f58cd;
   --btn-bg-pink: #f7c8e0;
+  --btn-bg-salmon-pink: #ffacac;
   --dark-grey: #2c3333;
   --powder-blue: #b2c8df;
 }
@@ -93,7 +94,7 @@ li.strike-through {
   text-decoration: line-through;
 }
 
-button {
+button.action {
   background-color: var(--btn-bg-color);
   color: var(--white-color);
   border-radius: 10px;
@@ -105,7 +106,7 @@ button {
   transition: 0.25s;
 }
 
-button:hover {
+button.action:hover {
   background-color: var(--royal-blue);
   cursor: pointer;
 }
@@ -160,11 +161,16 @@ ul li::before {
   font-weight: bold;
 }
 
-.collapsible button {
+.collapsible button.action {
   margin: 0.5rem 0;
   background-color: var(--btn-bg-pink);
   color: #404258;
   width: 120px;
+}
+
+.collapsible button.action:hover {
+  background-color: var(--btn-bg-salmon-pink);
+  cursor: pointer;
 }
 
 .collapsible .content {

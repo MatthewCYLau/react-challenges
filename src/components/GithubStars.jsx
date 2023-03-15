@@ -73,7 +73,7 @@ const GithubStar = () => {
           </tbody>
         </table>
       )}
-      <button onClick={handleOnShowAllClick}>
+      <button className="action" onClick={handleOnShowAllClick}>
         {shouldShowAll ? "Show less" : "Show all"}
       </button>
     </div>
