@@ -186,6 +186,7 @@ ul li::before {
 .icon {
   font-size: 2rem;
   padding: 0 1rem;
+  cursor: pointer;
 }
 
 .bold.icon {
@@ -194,4 +195,5 @@ ul li::before {
 
 .bold.icon.disabled {
   color: var(--powder-blue);
+  cursor: default;
 }

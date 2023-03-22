@@ -94,7 +94,14 @@ const Pagination = () => {
         <span className="icon" onClick={handleOnNextPageClick}>
           <i className="fa-solid fa-arrow-right"></i>
         </span>
-        <span className="bold icon" onClick={handleOnLastPageClick}>
+        <span
+          className={cn("bold icon", {
+            disabled:
+              searchIndexes.startIndex >=
+              returnPaginationLastPageStartIndex(POST_COUNT, PAGE_SIZE),
+          })}
+          onClick={handleOnLastPageClick}
+        >
           <i className="fa-solid fa-arrow-right bold"></i>
         </span>
       </div>
