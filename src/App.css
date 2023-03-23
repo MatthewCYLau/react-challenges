@@ -183,17 +183,19 @@ ul li::before {
   justify-content: flex-start;
 }
 
-.icon {
+button.icon {
+  background: none;
+  border: none;
   font-size: 2rem;
   padding: 0 1rem;
   cursor: pointer;
 }
 
-.bold.icon {
+button.bold {
   color: var(--royal-blue);
 }
 
-.bold.icon.disabled {
+button:disabled {
   color: var(--powder-blue);
   cursor: default;
 }

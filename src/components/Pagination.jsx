@@ -80,21 +80,43 @@ const Pagination = () => {
         </table>
       )}
       <div className="arrows">
-        <span
+        <button
+          disabled={searchIndexes.startIndex <= 0}
           className={cn("bold icon", {
             disabled: searchIndexes.startIndex <= 0,
           })}
           onClick={handleOnFirstPageClick}
         >
           <i className="fa-solid fa-arrow-left bold"></i>
-        </span>
-        <span className="icon" onClick={handleOnPreviousPageClick}>
+        </button>
+        <button
+          disabled={searchIndexes.startIndex <= 0}
+          className={cn("icon", {
+            disabled: searchIndexes.startIndex <= 0,
+          })}
+          onClick={handleOnPreviousPageClick}
+        >
           <i className="fa-solid fa-arrow-left"></i>
-        </span>
-        <span className="icon" onClick={handleOnNextPageClick}>
+        </button>
+        <button
+          disabled={
+            searchIndexes.startIndex >=
+            returnPaginationLastPageStartIndex(POST_COUNT, PAGE_SIZE)
+          }
+          className={cn("icon", {
+            disabled:
+              searchIndexes.startIndex >=
+              returnPaginationLastPageStartIndex(POST_COUNT, PAGE_SIZE),
+          })}
+          onClick={handleOnNextPageClick}
+        >
           <i className="fa-solid fa-arrow-right"></i>
-        </span>
-        <span
+        </button>
+        <button
+          disabled={
+            searchIndexes.startIndex >=
+            returnPaginationLastPageStartIndex(POST_COUNT, PAGE_SIZE)
+          }
           className={cn("bold icon", {
             disabled:
               searchIndexes.startIndex >=
@@ -103,7 +125,7 @@ const Pagination = () => {
           onClick={handleOnLastPageClick}
         >
           <i className="fa-solid fa-arrow-right bold"></i>
-        </span>
+        </button>
       </div>
     </div>
   );
