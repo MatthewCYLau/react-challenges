@@ -177,7 +177,7 @@ ul li::before {
   padding: 1rem 0;
 }
 
-.arrows {
+.pagination {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;

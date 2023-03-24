@@ -56,6 +56,12 @@ const Pagination = () => {
   useEffect(() => {
     fetchData(searchIndexes.startIndex, searchIndexes.endIndex);
   }, [fetchData, searchIndexes.startIndex, searchIndexes.endIndex]);
+
+  const isOnFirstPage = searchIndexes.startIndex <= 0;
+  const isOnLastPage =
+    searchIndexes.startIndex >=
+    returnPaginationLastPageStartIndex(POST_COUNT, PAGE_SIZE);
+
   return (
     <div id="pagination" className="paper">
       <h2>Pagination</h2>
@@ -79,48 +85,38 @@ const Pagination = () => {
           </tbody>
         </table>
       )}
-      <div className="arrows">
+      <div className="pagination">
         <button
-          disabled={searchIndexes.startIndex <= 0}
+          disabled={isOnFirstPage}
           className={cn("bold icon", {
-            disabled: searchIndexes.startIndex <= 0,
+            disabled: isOnFirstPage,
           })}
           onClick={handleOnFirstPageClick}
         >
           <i className="fa-solid fa-arrow-left bold"></i>
         </button>
         <button
-          disabled={searchIndexes.startIndex <= 0}
+          disabled={isOnFirstPage}
           className={cn("icon", {
-            disabled: searchIndexes.startIndex <= 0,
+            disabled: isOnFirstPage,
           })}
           onClick={handleOnPreviousPageClick}
         >
           <i className="fa-solid fa-arrow-left"></i>
         </button>
         <button
-          disabled={
-            searchIndexes.startIndex >=
-            returnPaginationLastPageStartIndex(POST_COUNT, PAGE_SIZE)
-          }
+          disabled={isOnLastPage}
           className={cn("icon", {
-            disabled:
-              searchIndexes.startIndex >=
-              returnPaginationLastPageStartIndex(POST_COUNT, PAGE_SIZE),
+            disabled: isOnLastPage,
           })}
           onClick={handleOnNextPageClick}
         >
           <i className="fa-solid fa-arrow-right"></i>
         </button>
         <button
-          disabled={
-            searchIndexes.startIndex >=
-            returnPaginationLastPageStartIndex(POST_COUNT, PAGE_SIZE)
-          }
+          disabled={isOnLastPage}
           className={cn("bold icon", {
-            disabled:
-              searchIndexes.startIndex >=
-              returnPaginationLastPageStartIndex(POST_COUNT, PAGE_SIZE),
+            disabled: isOnLastPage,
           })}
           onClick={handleOnLastPageClick}
         >
