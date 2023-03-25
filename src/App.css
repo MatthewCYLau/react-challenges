@@ -164,7 +164,7 @@ ul li::before {
 .collapsible button.action {
   margin: 0.5rem 0;
   background-color: var(--btn-bg-pink);
-  color: #404258;
+  color: var(--dark-grey);
   width: 120px;
 }
 
