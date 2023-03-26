@@ -137,7 +137,7 @@ button.action:hover {
 }
 
 .styled-table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
+  background-color: var(--white-color);
 }
 
 .styled-table tbody tr:last-of-type {
