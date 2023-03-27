@@ -1,4 +1,4 @@
-import { returnPaginationLastPageStartIndex } from "../utils.js";
+import { returnPaginationLastPageStartIndex } from "../utils";
 
 it("returns the correct pagination last page start index", () => {
   const POST_COUNT = 100;
