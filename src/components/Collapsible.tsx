@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 
-const Collapsible = ({ children }) => {
+type ComponentWithChildProps = React.PropsWithChildren<{}>;
+
+const Collapsible: React.FunctionComponent<ComponentWithChildProps> = ({
+  children,
+}) => {
   const [showContent, setShowContent] = useState(false);
   const toggle = () => {
     setShowContent(!showContent);
