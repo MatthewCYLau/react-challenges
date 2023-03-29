@@ -5,7 +5,7 @@ import GithubStars from "./components/GithubStars";
 import TodoListStrike from "./components/TodoListStrike";
 import Pagination from "./components/Pagination";
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <div className="wrapper">
       <nav className="sidenav">
