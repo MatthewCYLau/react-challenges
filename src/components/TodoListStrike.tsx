@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 
-const DeleteFromList = () => {
-  const [todos, setTodos] = useState([]);
-  const [value, setValue] = useState("");
+type Todo = {
+  name: string;
+  done: boolean;
+};
 
-  const changeHandler = (e) => {
+const DeleteFromList = () => {
+  const [todos, setTodos] = useState<Todo[]>([]);
+  const [value, setValue] = useState<string>("");
+
+  const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
 
@@ -13,7 +18,7 @@ const DeleteFromList = () => {
     setValue("");
   };
 
-  const handleOnItemClick = (todo) => {
+  const handleOnItemClick = (todo: string) => {
     let updatedTodos = todos.map((n) => {
       if (n.name === todo) {
         return { ...n, done: !n.done };
