@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import Collapsible from "./Collapsible";
 
 const DeleteFromList = () => {
-  const [list, setList] = useState([]);
-  const [value, setValue] = useState("");
+  const [list, setList] = useState<string[]>([]);
+  const [value, setValue] = useState<string>("");
 
-  const changeHandler = (e) => {
+  const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
 
@@ -14,7 +14,7 @@ const DeleteFromList = () => {
     setValue("");
   };
 
-  const deleteHandler = (item) => {
+  const deleteHandler = (item: string) => {
     setList(list.filter((ele) => ele !== item));
   };
 
