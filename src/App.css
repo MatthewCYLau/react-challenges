@@ -177,6 +177,12 @@ ul li::before {
   padding: 1rem 0;
 }
 
+.collapsible .content span {
+  display: list-item;
+  margin-left: 1em;
+  font-style: italic;
+}
+
 .pagination {
   display: flex;
   flex-direction: row;
