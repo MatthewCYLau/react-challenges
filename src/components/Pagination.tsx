@@ -1,26 +1,40 @@
-import React, { useEffect, useCallback } from "react";
+import React, { useEffect, useCallback, useState } from "react";
 import { returnPaginationLastPageStartIndex } from "../utils/utils";
 import cn from "classnames";
 import axios from "axios";
 
+interface Post {
+  id: string;
+  title: string;
+  body: string;
+}
+
+interface SearchIndexesState {
+  startIndex: number;
+  endIndex: number;
+}
+
 const Pagination = () => {
   const POST_COUNT = 100;
   const PAGE_SIZE = 10;
-  const [posts, setPosts] = React.useState([]);
+  const [posts, setPosts] = useState<Post[]>([]);
   // eslint-disable-next-line
-  const [postsCount, setPostsCount] = React.useState(0);
-  const [searchIndexes, setSearchIndexes] = React.useState({
+  const [postsCount, setPostsCount] = useState<number>(0);
+  const [searchIndexes, setSearchIndexes] = useState<SearchIndexesState>({
     startIndex: 0,
     endIndex: PAGE_SIZE,
   });
 
-  const fetchData = useCallback(async (startIndex, endIndex) => {
-    const { data } = await axios.get(
-      `https://jsonplaceholder.typicode.com/posts?_start=${startIndex}&_end=${endIndex}`
-    );
-    setPosts(data);
-    setPostsCount(POST_COUNT);
-  }, []);
+  const fetchData = useCallback(
+    async (startIndex: number, endIndex: number) => {
+      const { data } = await axios.get<Post[]>(
+        `https://jsonplaceholder.typicode.com/posts?_start=${startIndex}&_end=${endIndex}`
+      );
+      setPosts(data);
+      setPostsCount(POST_COUNT);
+    },
+    []
+  );
 
   const handleOnFirstPageClick = () =>
     setSearchIndexes({
