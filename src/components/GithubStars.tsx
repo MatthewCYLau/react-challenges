@@ -3,12 +3,18 @@ import React, { useState, useEffect, useCallback } from "react";
 
 const SEARCH_ENDPOINT = "https://api.github.com/search/repositories?q=react";
 
+interface Project {
+  name: string;
+  stars: number;
+  forks: number;
+}
+
 const getReactRepositories = () =>
   axios
     .get(SEARCH_ENDPOINT)
     .then((result) => result.data.items)
     .then((repos) =>
-      repos.map(({ forks, name, stargazers_count, html_url }) => ({
+      repos.map(({ forks, name: name, stargazers_count, html_url }) => ({
         forks,
         name,
         stars: stargazers_count,
@@ -18,8 +24,8 @@ const getReactRepositories = () =>
 
 const GithubStar = () => {
   const [shouldShowAll, setShouldShowAll] = useState(false);
-  const [list, setList] = useState([]);
-  const [listToRender, setListToRender] = useState([]);
+  const [list, setList] = useState<Project[]>([]);
+  const [listToRender, setListToRender] = useState<Project[]>([]);
 
   const fetchData = async () => {
     const res = await getReactRepositories();
@@ -27,7 +33,7 @@ const GithubStar = () => {
   };
 
   const sliceListByCount = useCallback(
-    (count) => {
+    (count: number) => {
       const slicedList = list.slice(0, count);
       setListToRender(slicedList);
     },
