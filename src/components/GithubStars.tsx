@@ -3,6 +3,16 @@ import React, { useState, useEffect, useCallback } from "react";
 
 const SEARCH_ENDPOINT = "https://api.github.com/search/repositories?q=react";
 
+interface RepositoriesResponse {
+  items: Item[];
+}
+
+interface Item {
+  name: string;
+  stargazers_count: number;
+  forks: number;
+}
+
 interface Project {
   name: string;
   stars: number;
@@ -11,14 +21,13 @@ interface Project {
 
 const getReactRepositories = () =>
   axios
-    .get(SEARCH_ENDPOINT)
+    .get<RepositoriesResponse>(SEARCH_ENDPOINT)
     .then((result) => result.data.items)
-    .then((repos) =>
-      repos.map(({ forks, name: name, stargazers_count, html_url }) => ({
+    .then((item) =>
+      item.map(({ forks, name, stargazers_count }) => ({
         forks,
         name,
         stars: stargazers_count,
-        url: html_url,
       }))
     );
 
