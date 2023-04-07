@@ -13,7 +13,7 @@ const Collapsible: React.FunctionComponent<ComponentWithChildProps> = ({
   return (
     <div className="collapsible">
       <button className="action" onClick={toggle}>
-        Show prompt
+        {showContent ? "Hide prompt" : "Show prompt"}
       </button>
       {showContent && <div className="content">{children}</div>}
     </div>
