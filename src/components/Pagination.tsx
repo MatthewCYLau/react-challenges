@@ -18,6 +18,7 @@ const Pagination = () => {
   const POST_COUNT = 100;
   const PAGE_SIZE = 10;
   const [posts, setPosts] = useState<Post[]>([]);
+  const [loading, setLoading] = useState(true);
   // eslint-disable-next-line
   const [postsCount, setPostsCount] = useState<number>(0);
   const [searchIndexes, setSearchIndexes] = useState<SearchIndexesState>({
@@ -27,11 +28,13 @@ const Pagination = () => {
 
   const fetchData = useCallback(
     async (startIndex: number, endIndex: number) => {
+      setLoading(true);
       const { data } = await axios.get<Post[]>(
         `https://jsonplaceholder.typicode.com/posts?_start=${startIndex}&_end=${endIndex}`
       );
       setPosts(data);
       setPostsCount(POST_COUNT);
+      setLoading(false);
     },
     []
   );
