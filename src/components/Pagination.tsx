@@ -1,5 +1,6 @@
 import React, { useEffect, useCallback, useState } from "react";
 import { returnPaginationLastPageStartIndex } from "../utils/utils";
+import Loader from "../components/Loader";
 import cn from "classnames";
 import axios from "axios";
 
@@ -82,7 +83,9 @@ const Pagination = () => {
   return (
     <div id="pagination" className="paper">
       <h2>Pagination</h2>
-      {!!posts.length && (
+      {loading ? (
+        <Loader />
+      ) : (
         <table className="styled-table">
           <thead>
             <tr>
