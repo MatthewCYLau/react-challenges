@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import Collapsible from "./Collapsible";
 interface Todo {
   name: string;
   done: boolean;
@@ -31,6 +31,11 @@ const DeleteFromList = () => {
 
   return (
     <div className="container">
+      <Collapsible>
+        <span>Create a to-do list</span>
+        <span>Click on each item to strikethrough item</span>
+        <span>Click on item again to remove strikethrough</span>
+      </Collapsible>
       <input
         className="round-input"
         type="text"

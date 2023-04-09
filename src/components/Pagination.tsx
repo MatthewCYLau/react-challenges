@@ -1,6 +1,7 @@
 import React, { useEffect, useCallback, useState } from "react";
 import { returnPaginationLastPageStartIndex } from "../utils/utils";
 import Loader from "../components/Loader";
+import Collapsible from "./Collapsible";
 import cn from "classnames";
 import axios from "axios";
 
@@ -82,6 +83,10 @@ const Pagination = () => {
 
   return (
     <div id="pagination" className="container">
+      <Collapsible>
+        <span>Make an API call to get posts via JSON placeholder</span>
+        <span>Render posts in table rows with pagination</span>
+      </Collapsible>
       <h2>Pagination</h2>
       {loading ? (
         <Loader />
