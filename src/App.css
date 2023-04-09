@@ -70,7 +70,7 @@ a {
   overflow-y: scroll;
 }
 
-.paper {
+.container {
   margin: 1rem 0;
   padding: 4rem 2rem;
   width: 500px;
@@ -79,7 +79,7 @@ a {
   background-color: #b4e4ff;
 }
 
-.paper input {
+.container input {
   padding: 10px;
   box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
   font-size: medium;

@@ -68,7 +68,7 @@ const GithubStar = () => {
   }, [list, sliceListByCount]);
 
   return (
-    <div id="github-stars" className="paper">
+    <div id="github-stars" className="container">
       <Collapsible>
         <span>
           Make an API call to get all Github repositories related to React

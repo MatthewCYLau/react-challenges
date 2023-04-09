@@ -81,7 +81,7 @@ const Pagination = () => {
     returnPaginationLastPageStartIndex(POST_COUNT, PAGE_SIZE);
 
   return (
-    <div id="pagination" className="paper">
+    <div id="pagination" className="container">
       <h2>Pagination</h2>
       {loading ? (
         <Loader />

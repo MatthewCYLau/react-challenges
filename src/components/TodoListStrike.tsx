@@ -30,7 +30,7 @@ const DeleteFromList = () => {
   };
 
   return (
-    <div className="paper">
+    <div className="container">
       <input
         className="round-input"
         type="text"
