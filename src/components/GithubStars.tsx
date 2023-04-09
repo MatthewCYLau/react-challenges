@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect, useCallback } from "react";
+import Collapsible from "./Collapsible";
 
 const SEARCH_ENDPOINT = "https://api.github.com/search/repositories?q=react";
 
@@ -68,6 +69,12 @@ const GithubStar = () => {
 
   return (
     <div id="github-stars" className="paper">
+      <Collapsible>
+        <span>
+          Make an API call to get all Github repositories related to React
+        </span>
+        <span>Render results in table; initially render ten items</span>
+      </Collapsible>
       {!!listToRender.length && (
         <table className="styled-table">
           <thead>

@@ -22,7 +22,7 @@ const DeleteFromList = () => {
     <div id="todo-list" className="paper">
       <Collapsible>
         <span>Create a to-do list</span>
-        <span>Click on each to-do item to remove it from list</span>
+        <span>Click on each to-do item to remove item from list</span>
       </Collapsible>
       <input
         className="round-input"
