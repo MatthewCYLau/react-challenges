@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-type Todo = {
+interface Todo {
   name: string;
   done: boolean;
-};
+}
 
 const DeleteFromList = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
