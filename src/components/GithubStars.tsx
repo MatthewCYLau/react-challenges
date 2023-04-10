@@ -71,7 +71,7 @@ const GithubStar = () => {
     <div id="github-stars" className="container">
       <Collapsible>
         <span>
-          Make an API call to get all Github repositories related to React
+          Make an HTTP request to get all Github repositories related to React
         </span>
         <span>Render results in table; initially render ten items</span>
         <span>Click the Show All button to render all items</span>
