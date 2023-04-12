@@ -14,10 +14,13 @@ const App: React.FC = () => {
             <a href="/">Home</a>
           </li>
           <li>
-            <a href="#todo-list">To-Do list</a>
+            <a href="#todo-list">To-do List</a>
           </li>
           <li>
-            <a href="#github-stars">Github stars</a>
+            <a href="#github-stars">Github Stars</a>
+          </li>
+          <li>
+            <a href="#todo-list-strikethrough">To-do List with Strikethrough</a>
           </li>
           <li>
             <a href="#pagination">Pagination</a>

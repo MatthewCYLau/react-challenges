@@ -30,7 +30,8 @@ const DeleteFromList = () => {
   };
 
   return (
-    <div className="container">
+    <div id="todo-list-strikethrough" className="container">
+      <h2>To-do List with Strikethrough</h2>
       <Collapsible>
         <span>Create a to-do list</span>
         <span>Click on each item to strikethrough item</span>

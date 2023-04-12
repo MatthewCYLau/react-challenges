@@ -20,6 +20,7 @@ const DeleteFromList = () => {
 
   return (
     <div id="todo-list" className="container">
+      <h2>To-do List</h2>
       <Collapsible>
         <span>Create a to-do list</span>
         <span>Click on each item to remove item from list</span>

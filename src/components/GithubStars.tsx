@@ -69,6 +69,7 @@ const GithubStar = () => {
 
   return (
     <div id="github-stars" className="container">
+      <h2>Github Stars</h2>
       <Collapsible>
         <span>
           Make an HTTP request to get all Github repositories related to React

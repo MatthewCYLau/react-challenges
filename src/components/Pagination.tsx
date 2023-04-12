@@ -85,7 +85,7 @@ const Pagination = () => {
     <div id="pagination" className="container">
       <h2>Pagination</h2>
       <Collapsible>
-        <span>Make an API call to get posts via JSON placeholder</span>
+        <span>Make an HTTP request to get posts via JSON placeholder</span>
         <span>Render posts in table rows with pagination</span>
       </Collapsible>
       {loading ? (
