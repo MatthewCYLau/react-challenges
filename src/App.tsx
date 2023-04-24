@@ -5,6 +5,7 @@ import GithubStars from "./components/GithubStars";
 import TodoListStrike from "./components/TodoListStrike";
 import Pagination from "./components/Pagination";
 import FizzBuzz from "./components/FizzBuzz";
+import FizzBuzzAsync from "./components/FizzBuzzAsync";
 
 const App: React.FC = () => {
   return (
@@ -29,6 +30,9 @@ const App: React.FC = () => {
           <li>
             <a href="#fizz-buzz">Fizz Buzz</a>
           </li>
+          <li>
+            <a href="#fizz-buzz-async">Fizz Buzz Async</a>
+          </li>
         </ul>
       </nav>
       <div className="main-content">
@@ -39,6 +43,7 @@ const App: React.FC = () => {
           <TodoListStrike />
           <Pagination />
           <FizzBuzz/>
+          <FizzBuzzAsync/>
         </section>
       </div>
     </div>

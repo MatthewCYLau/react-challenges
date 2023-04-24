@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import Collapsible from "./Collapsible";
 
-const FizzBuzz: React.FC = () => {
+const FizzBuzzAsync: React.FC = () => {
   const [value, setValue] = useState<string>("");
   const [list, setList] = useState<string[]>([]);
 
   const fizzBuzz = async (limit: number) => {
-    for (var i = 1; i < limit; i++) {
+    for (let i = 1; i <= limit; i++) {
       await new Promise((resolve) => setTimeout(resolve, 1000));
-      if (i % 15 == 0) console.log("FizzBuzz");
-      else if (i % 3 == 0) console.log("Fizz");
-      else if (i % 5 == 0) console.log("Buzz");
-      else console.log(i);
+      let output = "";
+      if (i % 3 === 0) output += "Fizz";
+      if (i % 5 === 0) output += "Buzz";
+      setList((prev) => [...prev, output || i.toString()]);
     }
   };
 
@@ -20,15 +20,15 @@ const FizzBuzz: React.FC = () => {
   };
 
   const submitHandler = () => {
-    fizzBuzz(+value);
     setValue("");
+    fizzBuzz(+value);
   };
 
   return (
-    <div id="fizz-buzz" className="container">
-      <h2>Fizz Buzz</h2>
+    <div id="fizz-buzz-async" className="container">
+      <h2>Fizz Buzz Async</h2>
       <Collapsible>
-        <span>Iterate integers 1 to N</span>
+        <span>Iterate integers 1 to N at one second interval</span>
         <span>
           For multiples of 3 print Fizz; for the multiples of 5 print Buzz
         </span>
@@ -54,4 +54,4 @@ const FizzBuzz: React.FC = () => {
   );
 };
 
-export default FizzBuzz;
+export default FizzBuzzAsync;
