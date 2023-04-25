@@ -104,11 +104,11 @@ button.action {
   margin: 0;
   font-weight: bold;
   transition: 0.25s;
+  cursor: pointer;
 }
 
 button.action:hover {
   background-color: var(--royal-blue);
-  cursor: pointer;
 }
 
 .styled-table {
