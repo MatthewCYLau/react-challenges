@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Collapsible from "./Collapsible";
 
 const FizzBuzzAsync: React.FC = () => {
   const [value, setValue] = useState<string>("");
   const [list, setList] = useState<string[]>([]);
+  const [isSubmitButtonDisabled, setIsSubmitButtonDisabled] = useState(true);
 
   const fizzBuzz = async (limit: number) => {
     for (let i = 1; i <= limit; i++) {
@@ -15,12 +16,15 @@ const FizzBuzzAsync: React.FC = () => {
     }
   };
 
+  useEffect(() => setIsSubmitButtonDisabled(!+value), [value]);
+
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
 
   const submitHandler = () => {
     setValue("");
+    setList([])
     fizzBuzz(+value);
   };
 
@@ -40,7 +44,7 @@ const FizzBuzzAsync: React.FC = () => {
         value={value}
         onChange={changeHandler}
       />{" "}
-      <button className="action" onClick={submitHandler}>
+      <button disabled={isSubmitButtonDisabled} className="action" onClick={submitHandler}>
         Submit
       </button>
       <hr />
