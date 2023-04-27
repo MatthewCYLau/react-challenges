@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { fizzBuzz } from "../utils/utils";
 import Collapsible from "./Collapsible";
 
 const FizzBuzz: React.FC = () => {
   const [value, setValue] = useState<string>("");
   const [list, setList] = useState<string[]>([]);
+  const [isSubmitButtonDisabled, setIsSubmitButtonDisabled] = useState(true);
+
+  useEffect(() => setIsSubmitButtonDisabled(!+value), [value]);
 
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
@@ -31,7 +34,11 @@ const FizzBuzz: React.FC = () => {
         value={value}
         onChange={changeHandler}
       />{" "}
-      <button className="action" onClick={submitHandler}>
+      <button
+        disabled={isSubmitButtonDisabled}
+        className="action"
+        onClick={submitHandler}
+      >
         Submit
       </button>
       <hr />
