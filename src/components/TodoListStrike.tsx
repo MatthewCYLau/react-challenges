@@ -14,7 +14,9 @@ const DeleteFromList = () => {
   };
 
   const submitHandler = () => {
-    setTodos([...todos, { name: value, done: false }]);
+    if (todos.filter(n => n.name === value).length === 0) {
+      setTodos([...todos, { name: value, done: false }]);
+    }
     setValue("");
   };
 
