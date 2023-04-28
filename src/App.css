@@ -224,3 +224,7 @@ button:disabled {
     transform: rotate(360deg);
   }
 }
+
+a .fa-solid {
+  margin-right: 1rem;
+}

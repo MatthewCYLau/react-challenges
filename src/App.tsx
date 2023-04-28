@@ -13,7 +13,7 @@ const App: React.FC = () => {
       <nav className="sidenav">
         <ul>
           <li>
-            <a href="/">Home</a>
+            <a href="/"><i className="fa-solid fa-house"></i>Home</a>
           </li>
           <li>
             <a href="#todo-list">To-do List</a>
