@@ -13,10 +13,14 @@ const App: React.FC = () => {
       <nav className="sidenav">
         <ul>
           <li>
-            <a href="/"><i className="fa-solid fa-house"></i>Home</a>
+            <a href="/">
+              <i className="icon fa-solid fa-house"></i>Home
+            </a>
           </li>
           <li>
-            <a href="#todo-list">To-do List</a>
+            <a href="#todo-list">
+              <i className="icon far fa-check-square"></i>To-do List
+            </a>
           </li>
           <li>
             <a href="#github-stars">Github Stars</a>
@@ -42,8 +46,8 @@ const App: React.FC = () => {
           <GithubStars />
           <TodoListStrike />
           <Pagination />
-          <FizzBuzz/>
-          <FizzBuzzAsync/>
+          <FizzBuzz />
+          <FizzBuzzAsync />
         </section>
       </div>
     </div>
