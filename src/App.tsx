@@ -23,7 +23,9 @@ const App: React.FC = () => {
             </a>
           </li>
           <li>
-            <a href="#github-stars">Github Stars</a>
+            <a href="#github-stars">
+              <i className="icon fa-solid fa-star"></i>Github Stars
+            </a>
           </li>
           <li>
             <a href="#todo-list-strikethrough">To-do List with Strikethrough</a>
