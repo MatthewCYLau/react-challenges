@@ -28,7 +28,10 @@ const App: React.FC = () => {
             </a>
           </li>
           <li>
-            <a href="#todo-list-strikethrough">To-do List with Strikethrough</a>
+            <a href="#todo-list-strikethrough">
+              <i className="icon fa-solid fa-strikethrough"></i>To-do List with
+              Strikethrough
+            </a>
           </li>
           <li>
             <a href="#pagination">Pagination</a>
