@@ -34,7 +34,8 @@ const App: React.FC = () => {
             </a>
           </li>
           <li>
-            <a href="#pagination">Pagination</a>
+            <a href="#pagination">
+              <i className="icon fa-solid fa-book"></i>Pagination</a>
           </li>
           <li>
             <a href="#fizz-buzz">Fizz Buzz</a>
