@@ -15,3 +15,8 @@ export const fizzBuzz = (limit: number): string[] => {
       return output || currentNumber.toString();
     });
 };
+
+export const asyncReturnArrayOfNumbers = async () => 
+  await new Promise<number[]>((resolve) => {
+      resolve([1,2,3]);
+});
