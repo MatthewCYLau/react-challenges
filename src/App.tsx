@@ -6,6 +6,7 @@ import TodoListStrike from "./components/TodoListStrike";
 import Pagination from "./components/Pagination";
 import FizzBuzz from "./components/FizzBuzz";
 import FizzBuzzAsync from "./components/FizzBuzzAsync";
+import Palindrome from "./components/Palindrome";
 
 const App: React.FC = () => {
   return (
@@ -35,7 +36,8 @@ const App: React.FC = () => {
           </li>
           <li>
             <a href="#pagination">
-              <i className="icon fa-solid fa-book"></i>Pagination</a>
+              <i className="icon fa-solid fa-book"></i>Pagination
+            </a>
           </li>
           <li>
             <a href="#fizz-buzz">Fizz Buzz</a>
@@ -54,6 +56,7 @@ const App: React.FC = () => {
           <Pagination />
           <FizzBuzz />
           <FizzBuzzAsync />
+          <Palindrome />
         </section>
       </div>
     </div>

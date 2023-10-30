@@ -21,4 +21,11 @@ export const asyncReturnArrayOfNumbers = async () =>
       resolve([1,2,3]);
 });
 
-export const palindrome = (str: string): boolean => true
+export const palindrome = (str: string): boolean => {
+  const formattedStr = str.toLowerCase().trim();
+  let reversed = "";
+  for (const char of str) {
+    reversed = char + reversed;
+  }
+  return formattedStr === reversed;
+}

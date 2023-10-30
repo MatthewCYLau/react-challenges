@@ -15,7 +15,6 @@ const Palindrome: React.FC = () => {
 
   const submitHandler = () => {
     setIsPalindrome(palindrome(value));
-    setValue("");
   };
 
   return (
@@ -38,6 +37,7 @@ const Palindrome: React.FC = () => {
         Submit
       </button>
       <hr />
+      <h3>{isPalindrome.toString()}</h3>
     </div>
   );
 };
