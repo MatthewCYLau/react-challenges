@@ -20,3 +20,5 @@ export const asyncReturnArrayOfNumbers = async () =>
   await new Promise<number[]>((resolve) => {
       resolve([1,2,3]);
 });
+
+export const palindrome = (str: string): boolean => true
