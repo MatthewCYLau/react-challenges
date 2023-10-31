@@ -2,9 +2,17 @@ import React, { useState, useEffect } from "react";
 import { palindrome } from "../utils/utils";
 import Collapsible from "./Collapsible";
 
+interface IPalindrome {
+  isPalindrome: boolean;
+  copy: string;
+}
+
 const Palindrome: React.FC = () => {
   const [value, setValue] = useState<string>("");
-  const [isPalindrome, setIsPalindrome] = useState<boolean>(false);
+  const [palindromeState, setPalindromeState] = useState<IPalindrome>({
+    isPalindrome: false,
+    copy: `${value} is not palindrome.`,
+  });
   const [isSubmitButtonDisabled, setIsSubmitButtonDisabled] = useState(true);
 
   useEffect(() => setIsSubmitButtonDisabled(!value), [value]);
@@ -14,7 +22,12 @@ const Palindrome: React.FC = () => {
   };
 
   const submitHandler = () => {
-    setIsPalindrome(palindrome(value));
+    const isPalindrome = palindrome(value);
+    setPalindromeState({
+      isPalindrome: isPalindrome,
+      copy: `${value} is ${isPalindrome ? "" : "not "} palindrome.`,
+    });
+    setValue("");
   };
 
   return (
@@ -37,7 +50,7 @@ const Palindrome: React.FC = () => {
         Submit
       </button>
       <hr />
-      <h3>{isPalindrome.toString()}</h3>
+      <h3>{palindromeState.copy}</h3>
     </div>
   );
 };
